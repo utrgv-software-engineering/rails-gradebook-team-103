@@ -12,6 +12,9 @@ class Grade < ApplicationRecord
             if student_grade < 0
                 errors.add(:student_grade, "can't be less than 0")
             end
+            if student_grade > 100
+                errors.add(:student_grade, "can't be greater than 100")
+            end
         end
     end
 end
