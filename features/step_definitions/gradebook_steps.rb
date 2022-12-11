@@ -1,6 +1,6 @@
 Given("there are grades in the gradebook") do
-    @teacher = create(:user, :teacher)
-    @ta = create(:user, :ta)
+    @teacher = create(:User)
+    @ta = create(:user)
     @eric = create(:grade, :valid)
     @tomai = create(:grade, :valid)
     @schweller = create(:grade, :valid)
