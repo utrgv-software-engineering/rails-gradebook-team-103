@@ -6,3 +6,9 @@ Feature: Deleting Grades
         And I click "Destroy" on a post
         Then that post should be deleted
 
+    Scenario: Viewing detailed grade information, should be able to delete the grade
+        Given there are grades in the gradebook
+        And I sign in as ta
+        When I visit the homepage
+        And I click "Destroy" on a post
+        Then that post should be deleted
