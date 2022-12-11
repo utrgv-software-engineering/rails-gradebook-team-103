@@ -25,4 +25,9 @@ RSpec.describe Grade, type: :model do
     grade = Grade.new(student_id: "18484", student_name: "Joe Exotic", student_grade: -30)
     expect(grade).to be_invalid
   end
+
+  it "requires the id to be greater than 5 characters long" do
+    grade = Grade.new(student_id: "2332", student_name: "Bobby Exotic", student_grade: 40)
+    expect(grade).to be_invalid
+  end
 end
