@@ -5,6 +5,12 @@ class GradesController < ApplicationController
   def index
     if !user_signed_in?
       redirect_to user_session_path
+    else
+        if params[:ascending] == 'true'
+          @grades = Grade.order('student_grade')
+        else
+          @grades = Grade.all
+        end  
     end
   end
 
