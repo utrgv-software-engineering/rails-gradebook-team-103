@@ -67,3 +67,10 @@ end
 When("I click {string} on a post") do |string|
     click_on string, :match => :first
 end
+
+Then("I should sort everyone's grade from ascending order") do
+    @grades = Grade.order('student_grade')
+    @grades.each do |x|
+        expect(page.body).to include(x.student_name)
+    end
+end
