@@ -47,3 +47,10 @@ Feature: View Grades
       When I visit the homepage
       And I click 'Ascending'
       Then I should sort everyone's grade from ascending order
+
+    Scenario: Sort Grades in descending order from homepage
+      Given there are grades in the gradebook
+      And I sign in
+      When I visit the homepage
+      And I click 'Descending'
+      Then I should sort everyone's grade from descending order
