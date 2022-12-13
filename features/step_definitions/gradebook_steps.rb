@@ -80,3 +80,10 @@ Then("I should sort everyone's grade from ascending order") do
         expect(page.body).to include(x.student_name)
     end
 end
+
+Then("I should sort everyone's grade from descending order") do
+    @grades = Grade.order('student_grade DESC')
+    @grades.each do |x|
+        expect(page.body).to include(x.student_name)
+    end
+end
