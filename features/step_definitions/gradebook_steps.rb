@@ -23,7 +23,7 @@ Given("I sign in as ta") do
 end
 Given("I sign in as teacher") do
   visit new_user_session_path
-  fill_in "user_email", with: @ta.email
+  fill_in "user_email", with: @teacher.email
   fill_in "user_password", with: "123greetings"
   click_on "Log in"
 end
