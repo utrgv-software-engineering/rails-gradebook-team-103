@@ -10,16 +10,24 @@ class GradesController < ApplicationController
 
   # GET /grades/1
   def show
+    if !user_signed_in?
+      redirect_to user_session_path
   end
+end
+
 
   # GET /grades/new
   def new
     @grade = Grade.new
   end
+end
 
   # GET /grades/1/edit
   def edit
+    if !user_signed_in?
+      redirect_to user_session_path
   end
+end
 
   # POST /grades
   def create
@@ -34,18 +42,24 @@ class GradesController < ApplicationController
 
   # PATCH/PUT /grades/1
   def update
+    if !user_signed_in?
+      redirect_to user_session_path
     if @grade.update(grade_params)
       redirect_to @grade, notice: 'Grade was successfully updated.'
     else
       render :edit
     end
   end
+end
 
   # DELETE /grades/1
   def destroy
+    if !user_signed_in?
+      redirect_to user_session_path
     @grade.destroy
     redirect_to grades_url, notice: 'Grade was successfully destroyed.'
   end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -57,4 +71,4 @@ class GradesController < ApplicationController
     def grade_params
       params.require(:grade).permit(:student_id, :student_name, :student_grade)
     end
-end
+
