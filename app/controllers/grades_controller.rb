@@ -19,7 +19,7 @@ class GradesController < ApplicationController
   # GET /grades/1
   def show
     if !user_signed_in?
-      redirect_to user_session_path
+      redirect_to new_user_session_path
     else 
   end
 end
@@ -27,7 +27,7 @@ end
   # GET /grades/new
   def new
     if !user_signed_in?
-      redirect_to user_session_path
+      redirect_to new_user_session_path
     else 
     @grade = Grade.new
   end
@@ -35,7 +35,7 @@ end
   # GET /grades/1/edit
   def edit
     if !user_signed_in?
-      redirect_to user_session_path
+      redirect_to new_user_session_path
     else 
   end
 end
@@ -43,7 +43,7 @@ end
   # POST /grades
   def create
     if !user_signed_in?
-      redirect_to user_session_path
+      redirect_to new_user_session_path
     else 
     @grade = Grade.new(grade_params)
 
@@ -58,7 +58,7 @@ end
   # PATCH/PUT /grades/1
   def update
     if !user_signed_in?
-      redirect_to user_session_path
+      redirect_to new_user_session_path
    
     else if @grade.update(grade_params)
       redirect_to @grade, notice: 'Grade was successfully updated.'
@@ -71,7 +71,7 @@ end
   # DELETE /grades/1
   def destroy
     if !user_signed_in?
-      redirect_to user_session_path
+      redirect_to new_user_session_path
    
     else
     @grade.destroy
